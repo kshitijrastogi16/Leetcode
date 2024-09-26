@@ -1,13 +1,12 @@
 class Solution {
 public:
     string mergeAlternately(string word1, string word2) {
-        const int n = min(word1.length(), word2.length());
-        string prefix;
-
-        for (int i = 0; i < n; ++i) {
-            prefix += word1[i];
-            prefix += word2[i];
+        int len = min(word1.size(), word2.size());
+        string s;
+        for (int i = 0; i < len; i++){
+            s += word1[i];
+            s += word2[i];
         }
-        return prefix + word1.substr(n) + word2.substr(n);
+        return s + word1.substr(len) + word2.substr(len);
     }
 };
